@@ -36,7 +36,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
         pip install argparse
-        pip install time
     - name: Check in NUAA
       run: |
         python checkin.py -u ${{secrets.USERNAME}} -p ${{secrets.PASSWORD}}
