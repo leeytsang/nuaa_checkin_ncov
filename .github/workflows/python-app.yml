@@ -2,7 +2,8 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
 name: Python application
-
+env:
+    TZ: Asia/Shanghai  # 设置时区
 on: 
   release:
     types: [published]
@@ -30,8 +31,6 @@ jobs:
       with:
         python-version: 3.8
     - name: Install dependencies
-      env:
-        TZ: Asia/Shanghai  # 设置时区
       run: |
         python -m pip install --upgrade pip
         pip install requests
